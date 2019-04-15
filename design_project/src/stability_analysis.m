@@ -12,12 +12,16 @@ nyquist (tf(PI_num,PI_den))
 title('Hunter Phillips Nyquist Plot for PD Controller')
 xlim([-1.2 1.2])
 grid
+legend('PD')
 
 % PD Controller Bode Plot
 f2 = figure;
 bode (tf(PI_num,PI_den)) % using previous vars
 title('Hunter Phillips Bode Plot for PD Controller')
 grid
+h1 = findobj(f2,'type','Axes');
+legend(h1(1),'PD');
+legend(h1(2),'PD');
 
 % PID Controller Nyquist Plot
 f3 = figure;
@@ -30,12 +34,16 @@ nyquist (tf(PID_num,PID_den))
 title('Hunter Phillips Nyquist Plot for PID Controller')
 xlim([-1.2 1.2])
 grid
+legend('PID')
 
-% PD Controller Bode Plot
+% PID Controller Bode Plot
 f4 = figure;
 bode (tf(PID_num,PID_den)) % using previous vars
 title('Hunter Phillips Bode Plot for PID Controller')
 grid
+h2 = findobj(f4,'type','Axes');
+legend(h2(1),'PID');
+legend(h2(2),'PID');
 
 print(f1,'../results/pd_nyquist', '-dpng', '-r1200')
 print(f2,'../results/pd_bode', '-dpng', '-r1200')

@@ -51,7 +51,7 @@ function [] = plot_PID_without_PF(savee)
     % Plot Wind Disturbance
     f5 = figure;
     plot(disturbance.time, disturbance.signals.values, 'k')
-    legend('e_A','fontsize', 12, 'location', 'southeast')
+    legend('T_d','fontsize', 12, 'location', 'southeast')
     title('Hunter Phillips Wind Disturbance','interpreter','latex')
     xlabel('Time (s)','interpreter','latex')
     ylabel('Torque (N-m)','interpreter','latex')
